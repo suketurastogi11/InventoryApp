@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,12 +27,6 @@ public class ProductsListActivity extends AppCompatActivity {
     //Initializing SQLite Database
     DatabaseHelper productsListDb;
 
-    private String currentProductId;
-    private String currentProductName;
-    private String currentProductPrice;
-    private String currentProductQuantity;
-    private String currentProductSale;
-    private String currentProductImagePath;
     private Button addNewProduct;
 
     @Override
@@ -88,7 +81,6 @@ public class ProductsListActivity extends AppCompatActivity {
 
                 productsList.setAdapter(productsListAdapter);
 
-                OnProductItemSelection();
             }
         }
     }
@@ -97,32 +89,6 @@ public class ProductsListActivity extends AppCompatActivity {
 
         productsArrayList.clear();
         productsListAdapter.notifyDataSetChanged();
-    }
-
-    private void OnProductItemSelection(){
-
-        productsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                ProductsList product = productsArrayList.get(position);
-                currentProductId = product.getProductId();
-                currentProductName = product.getProductName();
-                currentProductPrice = product.getProductPrice();
-                currentProductQuantity = product.getProductQuantity();
-                currentProductSale = product.getProductSale();
-                currentProductImagePath = product.getProductImagePath();
-
-                Intent schemeListIntent = new Intent(ProductsListActivity.this, DetailsActivity.class);
-                schemeListIntent.putExtra("currentProductId", currentProductId);
-                schemeListIntent.putExtra("currentProductName", currentProductName);
-                schemeListIntent.putExtra("currentProductPrice", currentProductPrice);
-                schemeListIntent.putExtra("currentProductQuantity", currentProductQuantity);
-                schemeListIntent.putExtra("currentProductSale", currentProductSale);
-                schemeListIntent.putExtra("currentProductImagePath", currentProductImagePath);
-                startActivity(schemeListIntent);
-            }
-        });
     }
 
     private void addNewProductOnClick(){

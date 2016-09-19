@@ -84,6 +84,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public boolean updateTrackSale(String id,Integer productSale) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(COL_PRODUCT_SALE, productSale);
+
+        db.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
+
+        return true;
+    }
+
     public Integer deleteData(String id) {
 
         SQLiteDatabase db = this.getWritableDatabase();
