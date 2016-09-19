@@ -15,9 +15,7 @@ import java.util.ArrayList;
 
 public class ProductsListAdapter extends ArrayAdapter<ProductsList> {
 
-    DatabaseHelper inventoryDb;
-
-    String finalSaleQuantity;
+    Integer trackSaleQuantity;
 
     public ProductsListAdapter(Activity context, ArrayList<ProductsList> product) {
         super(context, 0, product);
@@ -51,6 +49,8 @@ public class ProductsListAdapter extends ArrayAdapter<ProductsList> {
         String productSaleText = "Sale Quantity: " + currentProduct.getProductSale();
         productSale.setText(productSaleText);
 
+        trackSaleQuantity = Integer.parseInt(currentProduct.getProductSale());
+
         final Button trackSaleButton = (Button)listItemView.findViewById(R.id.track_sale_list_item_button);
 
         trackSaleButton.setOnClickListener(new View.OnClickListener() {
@@ -58,13 +58,11 @@ public class ProductsListAdapter extends ArrayAdapter<ProductsList> {
             public void onClick(View view) {
                 Log.e("Sale Track","Sale Track");
 
-                Integer trackSaleQuantity = Integer.parseInt(currentProduct.getProductSale());
                 if (trackSaleQuantity > 0){
 
-                    inventoryDb = new DatabaseHelper(getContext());
+                    DatabaseHelper inventoryDb = new DatabaseHelper(getContext());
 
                     trackSaleQuantity = trackSaleQuantity - 1;
-                    finalSaleQuantity = String.valueOf(trackSaleQuantity);
 
                     inventoryDb.updateTrackSale(currentProduct.getProductId(),trackSaleQuantity);
 
@@ -86,13 +84,14 @@ public class ProductsListAdapter extends ArrayAdapter<ProductsList> {
                 String currentProductPrice = currentProduct.getProductPrice();
                 String currentProductQuantity = currentProduct.getProductQuantity();
                 String currentProductImagePath = currentProduct.getProductImagePath();
+                String currentProductSale = currentProduct.getProductSale();
 
                 Intent schemeListIntent = new Intent(getContext(), DetailsActivity.class);
                 schemeListIntent.putExtra("currentProductId", currentProductId);
                 schemeListIntent.putExtra("currentProductName", currentProductName);
                 schemeListIntent.putExtra("currentProductPrice", currentProductPrice);
                 schemeListIntent.putExtra("currentProductQuantity", currentProductQuantity);
-                schemeListIntent.putExtra("currentProductSale", finalSaleQuantity);
+                schemeListIntent.putExtra("currentProductSale", currentProductSale);
                 schemeListIntent.putExtra("currentProductImagePath", currentProductImagePath);
                 finalListItemView.getContext().startActivity(schemeListIntent);
             }

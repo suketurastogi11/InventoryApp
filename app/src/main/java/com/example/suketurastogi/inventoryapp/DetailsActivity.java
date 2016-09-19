@@ -172,4 +172,11 @@ public class DetailsActivity extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeFile(productImagePath, bmOptions);
         productImageView.setImageBitmap(bitmap);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent Intent = new Intent(DetailsActivity.this, ProductsListActivity.class);
+        startActivity(Intent);
+    }
 }
