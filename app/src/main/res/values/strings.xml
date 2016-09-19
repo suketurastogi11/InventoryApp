@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">InventoryApp</string>
+
+    <string name="products_list_heading">Products List</string>
+    <string name="no_products_message">No Item In Product List. Add New Items Now By Clicking On Add Product Button.</string>
+
+    <string name="add_new_product_button">Add New Product</string>
+
+    <string name="add_new_product_heading">Add New Product Details</string>
+    <string name="add_new_product_name_hint">Enter Product Name</string>
+    <string name="add_new_product_quantity_hint">Enter Product Quantity</string>
+    <string name="add_new_product_price_hint">Enter Product Price</string>
+    <string name="add_image_of_product_button">Add Product Image</string>
+    <string name="submit_product_details_button">Submit All the Details</string>
+    <string name="track_sale_button_text">Track Sale</string>
+    <string name="received_shipment_button_text">Received Shipment</string>
+    <string name="product_image_description">product_image</string>
+    <string name="order_from_the_supplier_text_button">order from the supplier</string>
+    <string name="submit_changes_text_button">Submit Changes</string>
+    <string name="delete_entire_product_record_text_button">Delete Entire Product Record</string>
+
+</resources>

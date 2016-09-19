@@ -1,0 +1,20 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="products_list_heading">25sp</dimen>
+    <dimen name="no_products_message">40sp</dimen>
+    <dimen name="price_list_item_top_margin">10dp</dimen>
+
+    <dimen name="products_list_item">20sp</dimen>
+
+    <dimen name="products_list_item_padding">5dp</dimen>
+    <dimen name="products_list_item_value_margin">5dp</dimen>
+    <dimen name="products_list_item_value_left_margin">5dp</dimen>
+
+    <dimen name="add_new_product_heading">25sp</dimen>
+    <dimen name="add_new_product">15sp</dimen>
+
+
+</resources>

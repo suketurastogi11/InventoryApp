@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="products_list_heading">#5dbc7b</color>
+    <color name="products_list_heading_title">#2a437c</color>
+
+    <color name="products_list_item_background_color">#768bbc</color>
+    <color name="products_list_item">#000000</color>
+
+    <color name="add_new_product_heading">#768bbc</color>
+    <color name="add_new_product_heading_title">#000000</color>
+
+</resources>
